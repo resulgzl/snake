@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YILAN 🐍 BAL 🍯</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Oyun Giriş Ekranı -->
+  <div id="startScreen" class="screen">
+    <h1>🐍 YILAN 🍯 BAL</h1>
+    <input type="text" id="usernameInput" placeholder="Kullanıcı Adınızı Girin" />
+    <div id="startButtonContainer">
+      <button id="startButton">Oyuna Başla</button>
+    </div>
+  </div>
+
+  <!-- Oyun Alanı -->
+  <div id="gameContainer" class="game-container hidden">
+    <div class="header">
+      <div id="timer">30</div>
+      <div id="score">Yemek Sayısı: 0</div>
+      <div id="usernameDisplay">Hoş geldiniz!</div>
+    </div>
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+    <div class="controls">
+      <div class="row">
+        <button onclick="changeDirection(0, -1)">↑</button>
+      </div>
+      <div class="row">
+        <button onclick="changeDirection(-1, 0)">←</button>
+        <button onclick="changeDirection(1, 0)">→</button>
+      </div>
+      <div class="row">
+        <button onclick="changeDirection(0, 1)">↓</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

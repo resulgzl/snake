@@ -1,0 +1,222 @@
+/* Genel Stil */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1e1e1e; /* Modern koyu arka plan */
+  font-family: 'Poppins', Arial, sans-serif;
+  color: white;
+  overflow: hidden;
+  text-align: center; /* Tüm yazıları ortala */
+}
+
+/* Başlangıç Ekranı */
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #000, #222);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.screen h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  background: linear-gradient(45deg, #FFD700, #FF6347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#usernameInput {
+  padding: 12px;
+  width: 80%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 2px solid #FFD700;
+  font-size: 1.2rem;
+  text-align: center;
+  outline: none;
+  background-color: #222;
+  color: white;
+}
+
+/* Oyuna Başla Butonu */
+#startButtonContainer {
+  background-color: #28a745;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 255, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+#startButton {
+  font-size: 22px;
+  width: 100%;
+  padding: 12px 24px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+#startButton:hover {
+  background-color: rgba(0, 255, 0, 0.3);
+  transform: scale(1.05);
+}
+
+/* Oyun Alanı */
+.hidden {
+  display: none;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Üst Bilgiler */
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  text-align: center;
+}
+
+#timer, #score {
+  font-weight: bold;
+  font-size: 20px;
+  background: #1e1e1e;
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: 2px solid #FFD700;
+  min-width: 100px;
+}
+
+#timer {
+  color: #ff4747;
+  border-color: #ff4747;
+}
+
+#usernameDisplay {
+  font-size: 20px;
+  color: #FFD700;
+  font-weight: bold;
+  text-shadow: 0px 0px 5px rgba(255, 215, 0, 0.8);
+}
+
+/* Oyun Alanı (Canvas) */
+canvas {
+  background-color: #000;
+  border: 4px solid #FFD700;
+  border-radius: 12px;
+  max-width: 90vw;
+  max-height: 60vh;
+}
+
+canvas:hover {
+  transform: scale(1.03);
+}
+
+/* Kontroller */
+.controls {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+button {
+  padding: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+  background-color: #333;
+  color: white;
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #FFD700;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .screen h1 {
+    font-size: 2.5rem;
+  }
+
+  #usernameInput {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  #startButtonContainer {
+    width: 90%;
+  }
+
+  .header {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  canvas {
+    max-height: 50vh;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
